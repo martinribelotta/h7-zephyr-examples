@@ -17,3 +17,73 @@ This repository contains the required scripts to start zephyr OS projects for va
  - USB Device: TODO
  - USB Host: TODO
 
+
+## Howto start
+
+### Install python
+
+In linux the system normally provide a python installation, in windows, you can go and download from python.org
+
+Don't forgett to add python to the system PATH.
+
+### Install west toolchain
+
+In a terminal type:
+
+```bash
+python -m pip install west
+```
+
+### Install zephyr SDK
+
+Download and install last zephyr SDK from https://github.com/zephyrproject-rtos/sdk-ng/releases
+
+### Download or clone this repo
+
+Download or clone this repository:
+
+```bash
+git clone https://github.com/martinribelotta/h7-zephyr-examples.git
+```
+
+Next, open terminal in project and do this command:
+
+```bash
+west init && west update
+```
+
+Or if you have make
+
+
+```bash
+make init
+```
+
+
+### Build project
+
+For build project you can do:
+
+```bash
+west build blinky -DBOARD_ROOT=$PWD
+```
+
+Or if you have a makefile:
+
+```bash
+make build
+```
+
+### Flash board:
+
+For flash project in the board do:
+
+```bash
+west build flash
+```
+
+Or if you have a makefile:
+
+```bash
+make flash
+```
