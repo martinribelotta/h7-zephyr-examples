@@ -6,7 +6,7 @@ current_dir := $(dir $(mkfile_path))
 WEST_PROJECT:=$(current_dir)/blinky
 WEST_OPT:=-b generic_h750vb -DBOARD_ROOT=$(current_dir)
 
-.PHONY: build clean flash config
+.PHONY: build clean flash config init
 
 build:
 	west build $(WEST_PROJECT) $(WEST_OPT)
@@ -19,3 +19,6 @@ flash:
 
 config:
 	west build $(WEST_PROJECT) $(WEST_OPT) -t guiconfig
+
+init:
+	west init && west update
