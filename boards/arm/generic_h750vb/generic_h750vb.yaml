@@ -1,0 +1,24 @@
+identifier: generic_h750vb
+name: Generic H750VB
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+ram: 512
+flash: 128
+supported:
+  - arduino_gpio
+  - arduino_i2c
+  - uart
+  - gpio
+  - counter
+  - i2c
+  - pwm
+  - adc
+  - netif:eth
+  - spi
+  - backup_sram
+  - watchdog
+  - usb_device
