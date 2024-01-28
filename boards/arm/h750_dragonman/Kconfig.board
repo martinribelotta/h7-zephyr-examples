@@ -1,0 +1,3 @@
+config BOARD_H750_DRAGONMAN
+	bool "H750 Dragonman Development Board"
+	depends on SOC_STM32H750XX

@@ -4,8 +4,7 @@ This repository contains the required scripts to start zephyr OS projects for va
 
 ## Supported boards
 
- - Generic stm32h750vbt6 board: Work in progress
- - stm32h750 dragonnman h7: TODO
+ - stm32h750 dragonnman h7: Work in progress
  - h730/733 Duino: TODO
 
 ## Examples

@@ -3,10 +3,10 @@
 # Copyright (c) 2020 Teslabs Engineering S.L.
 # SPDX-License-Identifier: Apache-2.0
 
-if BOARD_GENERIC_H750VB
+if BOARD_H750_DRAGONMAN
 
 config BOARD
-	default "generic_h750vb"
+	default "h750_dragonman"
 
 if NETWORKING
 
@@ -15,4 +15,5 @@ config NET_L2_ETHERNET
 
 endif # NETWORKING
 
-endif # BOARD_GENERIC_H750VB
+endif # BOARD_H750_DRAGONMAN
+

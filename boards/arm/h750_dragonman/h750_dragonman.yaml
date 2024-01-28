@@ -1,5 +1,5 @@
-identifier: generic_h750vb
-name: Generic H750VB
+identifier: h750_dragonman
+name: H750 Dragonman
 type: mcu
 arch: arm
 toolchain:
