@@ -45,6 +45,7 @@
 		pwm-led0 = &red_pwm_led;
 		sw0 = &user_button;
 		spi-flash0 = &mx25l3233f;
+		sdhc0 = &sdmmc1;
 	};
 };
 
@@ -55,9 +56,9 @@
 
 &pll {
 	div-m = <4>;
-	mul-n = <400>;
+	mul-n = <384>;
 	div-p = <2>;
-	div-q = <20>;
+	div-q = <16>;
 	div-r = <2>;
 	clocks = <&clk_hse>;
 	status = "okay";
@@ -65,7 +66,7 @@
 
 &rcc {
 	clocks = <&pll>;
-	clock-frequency = <DT_FREQ_M(400)>;
+	clock-frequency = <DT_FREQ_M(384)>;
 	d1cpre = <1>;
 	hpre = <2>;
 	d1ppre = <2>;
@@ -155,19 +156,20 @@
 	};
 };
 
-// / {
-// 	fstab {
-// 		compatible = "zephyr,fstab";
-// 		lfs1: lfs1 {
-// 			compatible = "zephyr,fstab,littlefs";
-// 			read-size = <256>;
-// 			prog-size = <256>;
-// 			cache-size = <4096>;
-// 			lookahead-size = <8192>;
-// 			block-cycles = <512>;
-// 			partition = <&storage_partition>;
-// 			mount-point = "/qspif";
-// 			automount;
-// 		};
-// 	};
-// };
+zephyr_udc0: &usbotg_fs {
+	pinctrl-0 = <&usb_otg_fs_dm_pa11 &usb_otg_fs_dp_pa12>;
+	pinctrl-names = "default";
+	status = "okay";
+};
+
+&sdmmc1 {
+	pinctrl-0 = <
+		&sdmmc1_d0_pc8
+		&sdmmc1_ck_pc12
+		&sdmmc1_cmd_pd2
+	>;
+	pinctrl-names = "default";
+	bus-width = <1>;
+	status = "okay";
+	label = "SD";
+};
